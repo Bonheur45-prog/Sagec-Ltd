@@ -1,0 +1,224 @@
+import { useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { services } from '@data/services'
+import styles from './Services.module.css'
+
+// ── ANIMATION VARIANTS ─────────────────────────────────────
+
+const headingVariants = {
+  hidden:  { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
+}
+
+const gridVariants = {
+  hidden:  {},
+  visible: {
+    transition: { staggerChildren: 0.1, delayChildren: 0.15 },
+  },
+}
+
+const cardVariants = {
+  hidden:  { opacity: 0, y: 36 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
+  },
+}
+
+const ctaVariants = {
+  hidden:  { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+  },
+}
+
+// ── SERVICE ICONS ──────────────────────────────────────────
+
+const icons = {
+  architecture: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M3 21h18M3 21V7l9-4 9 4v14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 21V12h6v9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 3v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+    </svg>
+  ),
+  structure: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="2" y="18" width="4" height="4" rx="0.5" stroke="currentColor" strokeWidth="1.8"/>
+      <rect x="10" y="2" width="4" height="4" rx="0.5" stroke="currentColor" strokeWidth="1.8"/>
+      <rect x="18" y="18" width="4" height="4" rx="0.5" stroke="currentColor" strokeWidth="1.8"/>
+      <path d="M4 18L12 6M20 18L12 6M6 18h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+    </svg>
+  ),
+  mep: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 2a5 5 0 0 1 5 5c0 3-5 8-5 8S7 10 7 7a5 5 0 0 1 5-5z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/>
+      <circle cx="12" cy="7" r="1.5" fill="currentColor"/>
+      <path d="M5 20h14M8 20v-4h8v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  management: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.8"/>
+      <path d="M3 9h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+      <path d="M8 4V2M16 4V2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+      <path d="M7 13h4M7 16h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+      <circle cx="17" cy="14.5" r="2.5" stroke="currentColor" strokeWidth="1.8"/>
+      <path d="M17 12v-.5M17 17v-.5M19.5 14.5h.5M14.5 14.5h-.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+    </svg>
+  ),
+  construction: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M2 20h20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+      <path d="M4 20V10l8-6 8 6v10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect x="9" y="14" width="6" height="6" stroke="currentColor" strokeWidth="1.8"/>
+      <path d="M9 10h6M12 7v3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+    </svg>
+  ),
+  interior: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" strokeWidth="1.8"/>
+      <path d="M7 3v18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+      <path d="M2 12h5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+      <path d="M11 8h7M11 12h5M11 16h7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+    </svg>
+  ),
+}
+
+// ── SERVICE CARD ───────────────────────────────────────────
+
+function ServiceCard({ service }) {
+  return (
+    <motion.article
+      className={styles.card}
+      variants={cardVariants}
+      whileHover={{ y: -6, transition: { duration: 0.3, ease: 'easeOut' } }}
+    >
+      {/* Photo thumbnail */}
+      <div className={styles.photoWrapper}>
+        <img
+          src={service.image}
+          alt={service.title}
+          className={styles.photo}
+          loading="lazy"
+        />
+        {/* Subtle orange bottom edge on hover */}
+        <div className={styles.photoAccent} />
+      </div>
+
+      {/* Card body */}
+      <div className={styles.cardBody}>
+
+        {/* Title row: icon + title */}
+        <div className={styles.titleRow}>
+          <span className={styles.icon}>
+            {icons[service.iconKey]}
+          </span>
+          <h3 className={styles.title}>{service.title}</h3>
+        </div>
+
+        {/* Orange divider */}
+        <div className={styles.divider} />
+
+        {/* Description */}
+        <p className={styles.description}>{service.description}</p>
+
+        {/* CTA */}
+        <Link to={service.link} className={styles.cta}>
+          Learn More
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className={styles.ctaArrow}>
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </Link>
+
+      </div>
+    </motion.article>
+  )
+}
+
+// ── MAIN SERVICES SECTION ──────────────────────────────────
+
+export default function ServicesOverview() {
+  const sectionRef = useRef(null)
+
+  // Parallax: background moves slower than scroll
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  })
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['-15%', '15%'])
+
+  return (
+    <section
+      ref={sectionRef}
+      className={styles.section}
+      aria-labelledby="services-heading"
+    >
+      {/* ── PARALLAX BACKGROUND ─────────────── */}
+      <motion.div
+        className={styles.parallaxBg}
+        style={{ y: backgroundY }}
+        aria-hidden="true"
+      >
+        <div className={styles.bgImage} />
+        <div className={styles.bgOverlay} />
+      </motion.div>
+
+      {/* ── CONTENT ─────────────────────────── */}
+      <div className={styles.content}>
+
+        {/* Header */}
+        <motion.div
+          className={styles.header}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={headingVariants}
+        >
+          <span className={styles.eyebrow}>What We Offer</span>
+          <h2 id="services-heading" className={styles.heading}>
+            Our Services
+          </h2>
+          <p className={styles.subheading}>
+            From groundbreaking architecture to precision engineering —
+            SAGEC delivers end-to-end solutions across every discipline.
+          </p>
+        </motion.div>
+
+        {/* Services grid */}
+        <motion.div
+          className={styles.grid}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={gridVariants}
+        >
+          {services.map((service) => (
+            <ServiceCard key={service.id} service={service} />
+          ))}
+        </motion.div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={ctaVariants}
+        >
+          <Link to="/services" className={styles.viewAllBtn}>
+            View All Services
+          </Link>
+        </motion.div>
+
+      </div>
+    </section>
+  )
+}
