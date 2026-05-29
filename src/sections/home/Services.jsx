@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { useInView } from '@hooks/useInView'
 import { services } from '@data/services'
 import styles from './Services.module.css'
 
@@ -18,16 +19,16 @@ const headingVariants = {
 const gridVariants = {
   hidden:  {},
   visible: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.15 },
+    transition: { staggerChildren: 0.06, delayChildren: 0.05 },
   },
 }
 
 const cardVariants = {
-  hidden:  { opacity: 0, y: 36 },
+  hidden:  { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
   },
 }
 
@@ -148,6 +149,7 @@ function ServiceCard({ service }) {
 
 export default function ServicesOverview() {
   const sectionRef = useRef(null)
+  const [inViewRef, inView] = useInView({ threshold: 0.08 })
 
   // Parallax: background moves slower than scroll
   const { scrollYProgress } = useScroll({
@@ -156,9 +158,14 @@ export default function ServicesOverview() {
   })
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['-15%', '15%'])
 
+  const setRefs = (el) => {
+    sectionRef.current = el
+    inViewRef.current = el
+  }
+
   return (
     <section
-      ref={sectionRef}
+      ref={setRefs}
       className={styles.section}
       aria-labelledby="services-heading"
     >
@@ -179,8 +186,7 @@ export default function ServicesOverview() {
         <motion.div
           className={styles.header}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
+          animate={inView ? 'visible' : 'hidden'}
           variants={headingVariants}
         >
           <span className={styles.eyebrow}>What We Offer</span>
@@ -197,8 +203,7 @@ export default function ServicesOverview() {
         <motion.div
           className={styles.grid}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          animate={inView ? 'visible' : 'hidden'}
           variants={gridVariants}
         >
           {services.map((service) => (
@@ -209,8 +214,7 @@ export default function ServicesOverview() {
         {/* Bottom CTA */}
         <motion.div
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          animate={inView ? 'visible' : 'hidden'}
           variants={ctaVariants}
         >
           <Link to="/services" className={styles.viewAllBtn}>

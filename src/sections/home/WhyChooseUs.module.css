@@ -170,7 +170,7 @@
   font-family: var(--font-heading);
   font-size: 15px;
   font-weight: 700;
-  color: var(--color-white);
+  color: #ffffff;
   margin: 0 0 4px;
   line-height: 1.3;
 }
