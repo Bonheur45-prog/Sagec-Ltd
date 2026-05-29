@@ -38,10 +38,11 @@ const cardVariants = {
 // FIX #1: Use a ref for the interval so it doesn't restart on every
 // render. The current index is tracked via a ref too so the interval
 // callback always reads the latest value without needing it in deps.
-function PhotoSlider({ images }) {
+function PhotoSlider({ images, initialDelay = 0 }) {
   const [current, setCurrent] = useState(0);
   const currentRef = useRef(0);
   const timerRef = useRef(null);
+  const delayRef = useRef(null);
   const count = images.length;
 
   // Keep ref in sync with state so interval always has fresh value
@@ -51,24 +52,30 @@ function PhotoSlider({ images }) {
 
   useEffect(() => {
     if (count <= 1) return;
-    timerRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % count);
-    }, 3000);
-    return () => clearInterval(timerRef.current);
-    // Intentionally omitting `current` — interval fires on its own cadence
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [count]);
+
+    delayRef.current = setTimeout(() => {
+      timerRef.current = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % count);
+      }, 3000);
+    }, initialDelay);
+
+    return () => {
+      clearTimeout(delayRef.current);
+      clearInterval(timerRef.current);
+    };
+  }, [count, initialDelay]);
 
   const handleDotClick = (e, i) => {
     e.preventDefault();
     e.stopPropagation();
     // Reset the interval so clicking a dot doesn't cause an immediate jump
+    clearTimeout(delayRef.current);
     clearInterval(timerRef.current);
     setCurrent(i);
     if (count > 1) {
       timerRef.current = setInterval(() => {
         setCurrent((prev) => (prev + 1) % count);
-      }, 3000);
+      }, 5000);
     }
   };
 
@@ -134,7 +141,7 @@ function ProjectCard({ project, isHero = false, index = 0 }) {
         {/* ── Image area: slider + badge overlays ── */}
         {/* FIX #2: no inline width here — CSS handles hero vs small */}
         <div className={styles.imageArea}>
-          <PhotoSlider images={project.images} />
+          <PhotoSlider images={project.images} initialDelay={index * 500} />
           <span className={styles.categoryBadge}>{project.category}</span>
           <span className={styles.yearBadge}>{project.year}</span>
         </div>
