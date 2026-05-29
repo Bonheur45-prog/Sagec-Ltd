@@ -24,7 +24,7 @@ export default function Navbar({ transparent }) {
               src="/logo-color.png"
               alt="SAGEC Ltd"
               className={styles.logoImg}
-              style={{ filter: isSolid ? 'none' : 'brightness(0) invert(1)' }}
+              /*style={{ filter: isSolid ? 'none' : 'brightness(0) invert(1)' }}*/
             />
           </Link>
 
