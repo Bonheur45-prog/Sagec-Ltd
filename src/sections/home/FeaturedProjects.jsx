@@ -192,31 +192,29 @@ function BackgroundSketches() {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1440 900"
       preserveAspectRatio="xMidYMid slice"
+      width="100%"
+      height="100%"
       aria-hidden="true"
       focusable="false"
+      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
     >
       <defs>
-        {/* Fade gradients push sketches toward corners, clear in centre */}
-        <radialGradient id="fp-fadeTopLeft" cx="0%" cy="0%" r="55%">
-          <stop offset="0%" stopColor="#1B2A4A" stopOpacity="0" />
-          <stop offset="100%" stopColor="#1B2A4A" stopOpacity="1" />
+        {/* Radial gradient for mask: white at edges fades to black at center */}
+        <radialGradient id="mask-fade-gradient" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stopColor="black" />
+          <stop offset="100%" stopColor="white" />
         </radialGradient>
-        <radialGradient id="fp-fadeTopRight" cx="100%" cy="0%" r="55%">
-          <stop offset="0%" stopColor="#1B2A4A" stopOpacity="0" />
-          <stop offset="100%" stopColor="#1B2A4A" stopOpacity="1" />
-        </radialGradient>
-        <radialGradient id="fp-fadeBottomLeft" cx="0%" cy="100%" r="55%">
-          <stop offset="0%" stopColor="#1B2A4A" stopOpacity="0" />
-          <stop offset="100%" stopColor="#1B2A4A" stopOpacity="1" />
-        </radialGradient>
-        <radialGradient id="fp-fadeBottomRight" cx="100%" cy="100%" r="55%">
-          <stop offset="0%" stopColor="#1B2A4A" stopOpacity="0" />
-          <stop offset="100%" stopColor="#1B2A4A" stopOpacity="1" />
-        </radialGradient>
+        {/* Mask: white at corners fades to black toward center */}
+        <mask id="sketch-fade-mask">
+          <rect width="1440" height="900" fill="url(#mask-fade-gradient)" />
+        </mask>
       </defs>
 
+      {/* Wrap all sketches in mask to fade them toward center */}
+      <g mask="url(#sketch-fade-mask)">
+
       {/* ══ TOP-LEFT: Tower crane (white base lines) ══ */}
-      <g opacity="0.13" stroke="#FFFFFF" strokeWidth="1" fill="none">
+      <g opacity="0.20" stroke="#FFFFFF" strokeWidth="1" fill="none">
         {/* Mast — double line for structural feel */}
         <line x1="80" y1="20" x2="80" y2="270" />
         <line x1="92" y1="20" x2="92" y2="270" />
@@ -246,7 +244,7 @@ function BackgroundSketches() {
         <line x1="48" y1="280" x2="160" y2="280" />
       </g>
       {/* Orange accent — hook + cable highlight */}
-      <g opacity="0.25" stroke="#F26522" strokeWidth="1.5" fill="none">
+      <g opacity="0.28" stroke="#F26522" strokeWidth="1.5" fill="none">
         <rect x="173" y="118" width="18" height="12" rx="1" />
         <path d="M179 130 Q179 144 186 144 Q193 144 193 137 Q193 130 186 130" />
         <line x1="182" y1="90" x2="182" y2="118" />
@@ -254,7 +252,7 @@ function BackgroundSketches() {
 
       {/* ══ TOP-RIGHT: T-square + compass rose ══ */}
       <g
-        opacity="0.12"
+        opacity="0.20"
         stroke="#FFFFFF"
         strokeWidth="1"
         fill="none"
@@ -281,7 +279,7 @@ function BackgroundSketches() {
       </g>
       {/* Orange compass rose — top right corner */}
       <g
-        opacity="0.22"
+        opacity="0.28"
         stroke="#F26522"
         strokeWidth="1.2"
         fill="none"
@@ -294,7 +292,7 @@ function BackgroundSketches() {
         <polygon points="52,10 47,24 57,24" fill="#F26522" opacity="0.45" />
         {/* S needle */}
         <line x1="52" y1="57" x2="52" y2="88" />
-        <polygon points="52,92 47,78 57,78" fill="none" strokeWidth="1" />
+        <polygon points="52,92 47,78 57,78" fill="none" />
         {/* E / W arms */}
         <line x1="14" y1="52" x2="47" y2="52" />
         <line x1="57" y1="52" x2="90" y2="52" />
@@ -307,7 +305,7 @@ function BackgroundSketches() {
 
       {/* ══ BOTTOM-LEFT: Hard hat + scaffolding ══ */}
       <g
-        opacity="0.12"
+        opacity="0.20"
         stroke="#FFFFFF"
         strokeWidth="1"
         fill="none"
@@ -327,7 +325,7 @@ function BackgroundSketches() {
       </g>
       {/* Orange scaffolding — bottom left */}
       <g
-        opacity="0.20"
+        opacity="0.26"
         stroke="#F26522"
         strokeWidth="1.2"
         fill="none"
@@ -351,7 +349,7 @@ function BackgroundSketches() {
 
       {/* ══ BOTTOM-RIGHT: Architectural ruler + blueprint grid ══ */}
       <g
-        opacity="0.11"
+        opacity="0.20"
         stroke="#FFFFFF"
         strokeWidth="1"
         fill="none"
@@ -389,7 +387,7 @@ function BackgroundSketches() {
       </g>
       {/* Orange dimension arrows — bottom right */}
       <g
-        opacity="0.22"
+        opacity="0.28"
         stroke="#F26522"
         strokeWidth="1.3"
         fill="none"
@@ -402,11 +400,7 @@ function BackgroundSketches() {
         <line x1="92" y1="0" x2="92" y2="22" strokeDasharray="4,3" />
       </g>
 
-      {/* ══ Corner fade overlays — sketches appear only in corners ══ */}
-      <rect x="0"    y="0"   width="440" height="440" fill="url(#fp-fadeTopLeft)"     />
-      <rect x="1000" y="0"   width="440" height="440" fill="url(#fp-fadeTopRight)"    />
-      <rect x="0"    y="460" width="440" height="440" fill="url(#fp-fadeBottomLeft)"  />
-      <rect x="1000" y="460" width="440" height="440" fill="url(#fp-fadeBottomRight)" />
+      </g>
     </svg>
   );
 }
@@ -418,7 +412,7 @@ export default function FeaturedProjects() {
 
   // FIX #7: useInView returns [ref, inView] — ref goes on the DOM node
   // via the motion.section's ref prop, which Framer Motion forwards fine.
-  const [sectionRef, inView] = useInView(0.08);
+  const [sectionRef, inView] = useInView({ threshold: 0.08 });
 
   return (
     <motion.section
