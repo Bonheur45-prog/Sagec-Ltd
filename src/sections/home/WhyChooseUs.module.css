@@ -4,21 +4,25 @@
 .section {
   position: relative;
   background-color: var(--color-navy);
-  /* overflow:hidden is SAFE here — it clips the parallaxBg (top:-15%, height:130%)
-     so it doesn't bleed into adjacent sections.
-     JS translateY parallax is NOT affected by overflow:hidden —
-     only CSS background-attachment:fixed was broken by it (which we removed). */
+  /* overflow must be VISIBLE here so position:sticky on .mediaCol works.
+     Clipping of the parallax bg is handled by .parallaxClip instead. */
+}
+
+/* ─── Parallax clip wrapper ───────────────────────────────────── */
+/* overflow:hidden moved here (off .section) so sticky is not broken.
+   This wrapper is position:absolute/inset:0 so it sits behind everything
+   and clips the oversized parallaxBg without affecting stacking context
+   of the content above it. */
+.parallaxClip {
+  position: absolute;
+  inset: 0;
   overflow: hidden;
+  z-index: 0;
 }
 
 /* ─── Parallax background layer ──────────────────────────────── */
-/* FIX 1+2: Parallax is now JS-driven (translateY via scroll listener).
-   background-attachment:fixed removed — it breaks inside any ancestor
-   with overflow:hidden, will-change, or transform (Framer Motion sets these).
-   will-change:transform removed — it creates a new compositing layer that
-   also kills fixed positioning and is not needed for translateY approach.
-   The div is made slightly taller than 100% so the parallax travel
-   (moving upward as you scroll) never reveals a gap at top or bottom. */
+/* Parallax is JS-driven (translateY via Framer Motion scroll).
+   The div is slightly taller than 100% so travel never reveals a gap. */
 .parallaxBg {
   position: absolute;
   top: -15%;
@@ -49,11 +53,15 @@
 }
 
 /* ─── Inner two-column layout ─────────────────────────────────── */
+/* align-items:start is REQUIRED for position:sticky to work on children.
+   The default (stretch) makes the mediaCol fill the full grid height,
+   which means it never needs to stick — it's already as tall as the grid. */
 .inner {
   position: relative;
   z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: start;
   min-height: 680px;
   max-width: 1440px;
   margin: 0 auto;
@@ -229,23 +237,30 @@
 }
 
 /* ─── RIGHT COLUMN — media column wrapper ─────────────────────── */
+/* position:sticky keeps the card pinned to the viewport as the left
+   content scrolls past. top:80px gives it breathing room from the
+   top edge. It unsticks naturally when the left column's bottom
+   reaches the bottom of the sticky card (CSS handles this automatically).
+   Desktop only — mobile overrides this to display:none. */
 .mediaCol {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 48px 48px 48px 24px;
+  position: sticky;
+  top: 80px;
+  align-self: start;
 }
 
 /* ─── Media card ──────────────────────────────────────────────── */
-/* FIX 4: The card is now a contained element with border-radius,
-   border, and overflow:hidden. The media fills the card, not the column. */
+/* Fixed height so the card has a defined size when sticky.
+   aspect-ratio alone won't work here since width is percentage-based. */
 .mediaCard {
   width: 100%;
-  height: 100%;
-  max-height: 560px;
+  height: 500px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  overflow: hidden;       /* clips the image/video to rounded corners */
+  overflow: hidden;
   position: relative;
   background: rgba(255, 255, 255, 0.03);
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
@@ -312,6 +327,12 @@
 
   .mediaCol {
     padding: 40px 32px 40px 16px;
+    /* Keep sticky but reduce top offset on smaller viewports */
+    top: 60px;
+  }
+
+  .mediaCard {
+    height: 420px;
   }
 }
 
@@ -324,6 +345,8 @@
   .inner {
     grid-template-columns: 1fr;
     min-height: unset;
+    /* Restore stretch alignment for single-column layout */
+    align-items: stretch;
   }
 
   .content {
@@ -334,8 +357,9 @@
     max-width: 100%;
   }
 
-  /* Hide media column entirely on mobile */
+  /* Hide media column entirely on mobile — also disable sticky */
   .mediaCol {
     display: none;
+    position: static;
   }
 }

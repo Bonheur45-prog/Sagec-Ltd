@@ -165,18 +165,20 @@ export default function WhyChooseUs() {
       className={styles.section}
       aria-labelledby="wcu-heading"
     >
-      {/* Parallax background — moved by Framer Motion scroll transform */}
-      <motion.div
-        className={styles.parallaxBg}
-        style={{
-          y: backgroundY,
-          backgroundImage: sectionBackground.src ? `url(${sectionBackground.src})` : undefined,
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Gradient overlay — lighter left, much darker right */}
-      <div className={styles.overlay} aria-hidden="true" />
+      {/* parallaxClip: overflow:hidden lives here (not on .section) so
+          position:sticky on the media card isn't blocked by overflow:hidden */}
+      <div className={styles.parallaxClip} aria-hidden="true">
+        {/* Parallax background — moved by Framer Motion scroll transform */}
+        <motion.div
+          className={styles.parallaxBg}
+          style={{
+            y: backgroundY,
+            backgroundImage: sectionBackground.src ? `url(${sectionBackground.src})` : undefined,
+          }}
+        />
+        {/* Gradient overlay — lighter left, much darker right */}
+        <div className={styles.overlay} />
+      </div>
 
       <div className={styles.inner}>
 
