@@ -51,7 +51,7 @@
   font-family: var(--font-heading);
   font-size: clamp(32px, 4vw, 48px);
   font-weight: 700;
-  color: var(--color-white);
+  color: #ffffff;
   line-height: 1.15;
   margin: 0 0 16px;
 }
@@ -255,7 +255,7 @@
   font-family: var(--font-heading);
   font-size: 18px;
   font-weight: 700;
-  color: var(--color-white);
+  color: #ffffff;
   margin: 0 0 8px;
   line-height: 1.25;
 }
