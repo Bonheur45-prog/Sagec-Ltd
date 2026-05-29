@@ -23,13 +23,13 @@ const gridVariants = {
   },
 }
 
-const cardVariants = {
-  hidden:  { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
-  },
+// Service card reveal animation removed for faster render and lower runtime work.
+function getResponsiveImageSizes() {
+  return '(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw'
+}
+
+function buildResponsiveSrcSet(imagePath) {
+  return `${imagePath} 480w, ${imagePath} 768w, ${imagePath} 1024w, ${imagePath} 1280w`
 }
 
 const ctaVariants = {
@@ -98,19 +98,22 @@ const icons = {
 
 function ServiceCard({ service }) {
   return (
-    <motion.article
-      className={styles.card}
-      variants={cardVariants}
-      whileHover={{ y: -6, transition: { duration: 0.3, ease: 'easeOut' } }}
-    >
+    <article className={styles.card}>
       {/* Photo thumbnail */}
       <div className={styles.photoWrapper}>
-        <img
-          src={service.image}
-          alt={service.title}
-          className={styles.photo}
-          loading="lazy"
-        />
+        <picture>
+          <img
+            src={service.image}
+            srcSet={buildResponsiveSrcSet(service.image)}
+            sizes={getResponsiveImageSizes()}
+            alt={service.title}
+            className={styles.photo}
+            loading="lazy"
+            decoding="async"
+            importance="low"
+            fetchpriority="low"
+          />
+        </picture>
         {/* Subtle orange bottom edge on hover */}
         <div className={styles.photoAccent} />
       </div>
@@ -141,7 +144,7 @@ function ServiceCard({ service }) {
         </Link>
 
       </div>
-    </motion.article>
+    </article>
   )
 }
 

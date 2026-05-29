@@ -82,7 +82,7 @@
   font-family: var(--font-heading);
   font-size: clamp(30px, 3.2vw, 44px);
   font-weight: 700;
-  color: var(--color-white);
+  color: #ffffff;
   line-height: 1.15;
   margin: 0 0 12px;
 }
