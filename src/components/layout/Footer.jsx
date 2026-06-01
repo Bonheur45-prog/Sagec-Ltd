@@ -120,15 +120,7 @@ export default function Footer() {
         {/* Col 1: Logo + description + socials */}
         <div className={styles.col}>
           <Link to="/" className={styles.logoWrap} aria-label="SAGEC home">
-            <div className={styles.logoMark} aria-hidden="true">
-              <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="12 2 22 19 2 19" />
-              </svg>
-            </div>
-            <div className={styles.logoText}>
-              <span className={styles.logoName}>SAGEC Ltd</span>
-              <span className={styles.logoTagline}>Engineering Excellence</span>
-            </div>
+            <img src="/logo-color-foot.png" alt="SAGEC Ltd" className={styles.logoMark} />
           </Link>
 
           <p className={styles.description}>
