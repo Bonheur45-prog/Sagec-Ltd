@@ -65,9 +65,9 @@ export default function Navbar({ transparent }) {
             aria-label="Open navigation menu"
             aria-expanded={drawerOpen}
           >
-            <span className={`${styles.bar} ${isSolid ? styles.barDark : styles.barLight}`} />
-            <span className={`${styles.bar} ${isSolid ? styles.barDark : styles.barLight}`} />
-            <span className={`${styles.bar} ${isSolid ? styles.barDark : styles.barLight}`} />
+            <span className={`${styles.bar} ${styles.barDark}`} />
+            <span className={`${styles.bar} ${styles.barDark}`} />
+            <span className={`${styles.bar} ${styles.barDark}`} />
           </button>
 
         </div>

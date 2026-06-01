@@ -191,8 +191,8 @@
 
 .bar {
   display: block;
-  width: 22px;
-  height: 2px;
+  width: 25px;
+  height: 3px;
   border-radius: var(--radius-full);
   transition: background-color 0.35s ease;
 }
@@ -227,5 +227,18 @@
 
   .logoImg {
     height: 34px;
+  }
+}
+
+/* Increase navbar logo on smaller screens for better visibility */
+@media (max-width: 768px) {
+  .logoImg {
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoImg {
+    height: 60px;
   }
 }

@@ -15,6 +15,7 @@ export const storyContent = {
     'Over the years, we have grown from a focused architectural practice into a full-service firm spanning structural engineering, MEP systems, project management, construction management, and interior design. Each discipline strengthened by the last — and every project a stepping stone to the next.',
     'Today, SAGEC stands behind some of Kigali\'s most recognisable landmarks. But for us, the most important structure is always the next one — and the trust our clients place in us to bring their vision to life.',
   ],
+  quote: "We don't just build structures. We build trust, one project at a time.",
   image: '/images/about/our-story.jpg',
   imageAlt: 'SAGEC team at a construction site in Kigali',
 }
