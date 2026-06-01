@@ -1,3 +1,9 @@
+import AboutHero from '@sections/about/AboutHero'
+
 export default function AboutPage() {
-  return <div style={{ padding: '120px 40px', fontFamily: 'var(--font-heading)', fontSize: '32px', color: 'var(--color-navy)' }}>AboutPage</div>
+  return (
+    <>
+      <AboutHero />
+    </>
+  )
 }
