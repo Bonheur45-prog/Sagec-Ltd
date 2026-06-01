@@ -17,14 +17,14 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Corner orange L-shape (both variants) */
+/* Corner orange L-shape */
 .card::before {
   content: '';
   position: absolute;
   top: -1px;
   left: -1px;
-  width: 58px;
-  height: 58px;
+  width: 50px;
+  height: 50px;
   border-top: 2.5px solid var(--color-orange);
   border-left: 2.5px solid var(--color-orange);
   border-radius: 20px 0 0 0;
@@ -36,15 +36,15 @@
   position: absolute;
   bottom: -1px;
   right: -1px;
-  width: 58px;
-  height: 58px;
+  width: 50px;
+  height: 50px;
   border-bottom: 2.5px solid var(--color-orange);
   border-right: 2.5px solid var(--color-orange);
   border-radius: 0 0 20px 0;
   pointer-events: none;
 }
 
-/* ── LARGE CARD SPECIFICS ───────────────────────────────────── */
+/* ── LARGE CARD (desktop default) ───────────────────────────── */
 .cardLarge {
   padding: 40px 32px;
 }
@@ -80,7 +80,7 @@
   font-size: 13px;
 }
 
-/* ── SMALL CARD SPECIFICS ───────────────────────────────────── */
+/* ── SMALL CARD (desktop default) ───────────────────────────── */
 .cardSmall {
   padding: 28px 24px;
 }
@@ -227,21 +227,143 @@
   text-overflow: ellipsis;
 }
 
-/* ── RESPONSIVE (mobile-first, already) ─────────────────────── */
-@media (max-width: 640px) {
+/* ── RESPONSIVE: TABLET (max-width: 768px) ──────────────────── */
+@media (max-width: 768px) {
   .cardLarge {
-    padding: 32px 24px;
+    padding: 32px 28px;
   }
-
+  
   .cardLarge .quoteDecor {
     font-size: 100px;
+    margin: -25px 0 -25px -10px;
   }
-
+  
   .cardLarge .quoteText {
     font-size: 16px;
   }
-
+  
   .cardSmall {
     padding: 24px 20px;
+  }
+  
+  .cardSmall .quoteDecor {
+    font-size: 70px;
+    margin: -15px 0 -15px -6px;
+  }
+}
+
+/* ── RESPONSIVE: MOBILE (max-width: 640px) ──────────────────── */
+@media (max-width: 640px) {
+  .cardLarge {
+    padding: 28px 20px;
+  }
+  
+  .cardLarge .quoteDecor {
+    font-size: 80px;
+    margin: -20px 0 -20px -8px;
+  }
+  
+  .cardLarge .quoteText {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+  
+  .cardLarge .readMoreBtn {
+    margin-bottom: 20px;
+  }
+  
+  .cardLarge .avatar {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .cardLarge .clientName {
+    font-size: 15px;
+  }
+  
+  .cardSmall {
+    padding: 20px 16px;
+  }
+  
+  .cardSmall .quoteDecor {
+    font-size: 60px;
+    margin: -12px 0 -12px -6px;
+  }
+  
+  .cardSmall .quoteText {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    -webkit-line-clamp: 4;
+  }
+  
+  .cardSmall .readMoreBtn {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .cardSmall .avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .cardSmall .clientName {
+    font-size: 13px;
+  }
+  
+  .cardSmall .clientRole {
+    font-size: 10px;
+  }
+  
+  .client {
+    gap: 10px;
+  }
+}
+
+/* ── VERY SMALL (max-width: 480px) ─────────────────────────── */
+@media (max-width: 480px) {
+  .cardLarge {
+    padding: 24px 16px;
+  }
+  
+  .cardLarge .quoteDecor {
+    font-size: 70px;
+    margin: -15px 0 -15px -6px;
+  }
+  
+  .cardLarge .quoteText {
+    font-size: 14px;
+  }
+  
+  .cardSmall {
+    padding: 18px 14px;
+  }
+  
+  .cardSmall .quoteDecor {
+    font-size: 50px;
+    margin: -10px 0 -10px -4px;
+  }
+  
+  .cardSmall .quoteText {
+    font-size: 12px;
+  }
+  
+  .cardSmall .readMoreBtn {
+    font-size: 11px;
+  }
+  
+  .avatar {
+    border-width: 1.5px;
+  }
+  
+  .clientName {
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  .clientRole {
+    white-space: normal;
+    word-break: break-word;
   }
 }
