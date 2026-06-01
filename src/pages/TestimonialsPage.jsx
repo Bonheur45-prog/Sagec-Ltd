@@ -1,3 +1,11 @@
+import TestimonialsHero from '../sections/testimonials/TestimonialsHero';
+import TestimonialsGrid from '../sections/testimonials/TestimonialsGrid';
+
 export default function TestimonialsPage() {
-  return <div style={{ padding: '120px 40px', fontFamily: 'var(--font-heading)', fontSize: '32px', color: 'var(--color-navy)' }}>TestimonialsPage</div>
+  return (
+    <div>
+      <TestimonialsHero />
+      <TestimonialsGrid />
+    </div>
+  )
 }

@@ -1,0 +1,99 @@
+.section {
+  background-color: var(--color-light-grey, #F5F6F8);
+  padding: 80px 0 100px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Header (trust + powerful) ─────────────────────────────── */
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 56px auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.heading span {
+  color: var(--color-orange);
+}
+
+.subheading {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(27, 42, 74, 0.7);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* ── Featured row (2 large cards side by side) ────────────── */
+.featuredRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 56px;
+}
+
+/* ── Small cards grid (4 items, 2 columns, 2 rows) ────────── */
+.smallGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .featuredRow {
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .smallGrid {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0 80px;
+  }
+  .featuredRow {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .smallGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .header {
+    margin-bottom: 40px;
+  }
+  .heading {
+    font-size: 32px;
+  }
+  .subheading {
+    font-size: 15px;
+  }
+}

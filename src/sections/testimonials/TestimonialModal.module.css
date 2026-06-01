@@ -1,0 +1,287 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 29, 51, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal {
+  background: white;
+  border-radius: 28px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Custom scrollbar for modal */
+.modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: var(--color-orange);
+  border-radius: 10px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(27, 42, 74, 0.08);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  z-index: 10;
+}
+
+.closeBtn svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--color-navy);
+}
+
+.closeBtn:hover {
+  background: rgba(27, 42, 74, 0.15);
+}
+
+.modalContent {
+  padding: 48px 40px 48px 40px;
+}
+
+.quoteIcon {
+  font-family: Georgia, serif;
+  font-size: 100px;
+  line-height: 1;
+  color: var(--color-orange);
+  opacity: 0.25;
+  margin-bottom: -30px;
+  margin-top: -20px;
+}
+
+.fullQuote {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--color-navy);
+  margin: 0 0 32px 0;
+}
+
+.clientRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(27, 42, 74, 0.1);
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--color-orange);
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarInitials {
+  width: 100%;
+  height: 100%;
+  background: var(--color-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+
+.clientName {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-navy);
+  margin: 0 0 4px 0;
+}
+
+.clientRole {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: rgba(27, 42, 74, 0.6);
+  margin: 0;
+}
+
+/* ── RESPONSIVE: TABLET (max-width: 768px) ──────────────────── */
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 40px 32px;
+  }
+  
+  .quoteIcon {
+    font-size: 80px;
+    margin-bottom: -25px;
+    margin-top: -15px;
+  }
+  
+  .fullQuote {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  
+  .clientRow {
+    gap: 16px;
+  }
+  
+  .avatar {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* ── RESPONSIVE: MOBILE (max-width: 640px) ──────────────────── */
+@media (max-width: 640px) {
+  .overlay {
+    padding: 12px;
+  }
+  
+  .modal {
+    border-radius: 24px;
+    max-height: 90vh;
+  }
+  
+  .modalContent {
+    padding: 32px 24px;
+  }
+  
+  .quoteIcon {
+    font-size: 70px;
+    margin-bottom: -20px;
+    margin-top: -12px;
+  }
+  
+  .fullQuote {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+  
+  .clientRow {
+    gap: 14px;
+  }
+  
+  .avatar {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .avatarInitials {
+    font-size: 18px;
+  }
+  
+  .clientName {
+    font-size: 16px;
+  }
+  
+  .clientRole {
+    font-size: 13px;
+  }
+  
+  .closeBtn {
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .closeBtn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* ── VERY SMALL (max-width: 480px) ─────────────────────────── */
+@media (max-width: 480px) {
+  .overlay {
+    padding: 8px;
+  }
+  
+  .modal {
+    border-radius: 20px;
+  }
+  
+  .modalContent {
+    padding: 28px 20px;
+  }
+  
+  .quoteIcon {
+    font-size: 60px;
+    margin-bottom: -15px;
+    margin-top: -10px;
+  }
+  
+  .fullQuote {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .clientRow {
+    gap: 12px;
+  }
+  
+  .avatar {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .avatarInitials {
+    font-size: 16px;
+  }
+  
+  .clientName {
+    font-size: 15px;
+  }
+  
+  .clientRole {
+    font-size: 12px;
+  }
+  
+  .closeBtn {
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .closeBtn svg {
+    width: 18px;
+    height: 18px;
+  }
+}

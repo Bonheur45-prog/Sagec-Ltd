@@ -10,7 +10,8 @@ const testimonials = [
     name: "Jean-Pierre Habimana",
     title: "CEO",
     company: "Kigali Commercial Ventures",
-    photo: "",
+    photo: "https://i.pinimg.com/736x/b4/6d/04/b46d04bc10a3b11b591953e57c9ebcd8.jpg",
+    featured: true,
   },
   {
     id: "t2",
@@ -20,6 +21,7 @@ const testimonials = [
     title: "Director of Infrastructure",
     company: "Rwanda Governance Board",
     photo: "",
+    featured: true,
   },
   {
     id: "t3",
@@ -29,6 +31,7 @@ const testimonials = [
     title: "General Manager",
     company: "Lemigo Hotel Kigali",
     photo: "",
+    featured: false,
   },
   {
     id: "t4",
@@ -38,6 +41,7 @@ const testimonials = [
     title: "Director",
     company: "Ndahiro Properties Ltd",
     photo: "",
+    featured: false,
   },
   {
     id: "t5",
@@ -47,6 +51,7 @@ const testimonials = [
     title: "Head of Projects",
     company: "Horizon Real Estate Rwanda",
     photo: "",
+    featured: false,
   },
   {
     id: "t6",
@@ -55,7 +60,8 @@ const testimonials = [
     name: "Sophie Murekatete",
     title: "Managing Director",
     company: "Kigali Urban Developers",
-    photo: "",
+    photo: "https://scontent.cdninstagram.com/v/t51.82787-19/518196272_18027622784704693_5655738059717363176_n.jpg?_nc_cat=103&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy41MzIuQzMifQ%3D%3D&_nc_ohc=AaApOUBNVMoQ7kNvwH2bR6q&_nc_oc=AdoOVHOa_WpG0tcIqkl7HBSPC_Q5_xy5-HyVYiLpFMPVpaBkJ7QOPH7jDEdcjXbS6V8&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=RpYQ8fGGuwtMDf-8q9oHlw&_nc_ss=7b6a8&oh=00_Af9PqhFWYjZ_4yE2aiavq0Uii2h3IpUb8xBUmBSVr9s3Qg&oe=6A239952",
+    featured: false,
   },
 ];
 
