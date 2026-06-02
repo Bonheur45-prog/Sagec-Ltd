@@ -1,3 +1,11 @@
+import CareersHero from "@sections/careers/CareersHero";
+import OpenPositions from "@sections/careers/OpenPositions";
+
 export default function CareersPage() {
-  return <div style={{ padding: '120px 40px', fontFamily: 'var(--font-heading)', fontSize: '32px', color: 'var(--color-navy)' }}>CareersPage</div>
+  return (
+    <>
+      <CareersHero />
+      <OpenPositions />
+    </>
+  );
 }
