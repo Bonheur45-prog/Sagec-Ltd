@@ -2,6 +2,7 @@ import AboutHero from '@sections/about/AboutHero';
 import OurStory from '@sections/about/OurStory';
 import MissionVision from '@sections/about/MissionVision';
 import Timeline from '@sections/about/Timeline';
+import AboutCTA from '@sections/about/AboutCTA';
 
 export default function AboutPage() {
   return (
@@ -10,6 +11,7 @@ export default function AboutPage() {
       <OurStory />
       <MissionVision />
       <Timeline />
+      <AboutCTA />
     </>
   )
 }
