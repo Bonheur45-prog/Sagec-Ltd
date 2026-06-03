@@ -12,6 +12,7 @@ const ProjectDetailPage  = lazy(() => import('@pages/ProjectDetailPage'))
 const TestimonialsPage   = lazy(() => import('@pages/TestimonialsPage'))
 const CareersPage        = lazy(() => import('@pages/CareersPage'))
 const BlogPage           = lazy(() => import('@pages/BlogPage'))
+const BlogPostPage       = lazy(() => import('@pages/BlogPostPage'))
 const ContactPage        = lazy(() => import('@pages/ContactPage'))
 const NotFoundPage       = lazy(() => import('@pages/NotFoundPage'))
 
@@ -42,6 +43,7 @@ const router = createBrowserRouter([
       { path: 'testimonials',   element: <Wrap Component={TestimonialsPage} /> },
       { path: 'careers',        element: <Wrap Component={CareersPage} /> },
       { path: 'blog',           element: <Wrap Component={BlogPage} /> },
+      { path: 'blog/:slug',     element: <Wrap Component={BlogPostPage} /> },
       { path: 'contact',        element: <Wrap Component={ContactPage} /> },
     ],
   },

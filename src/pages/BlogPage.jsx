@@ -1,3 +1,11 @@
+import BlogHero from '@sections/blog/BlogHero';
+import BlogPosts from '@sections/blog/BlogPosts';
+
 export default function BlogPage() {
-  return <div style={{ padding: '120px 40px', fontFamily: 'var(--font-heading)', fontSize: '32px', color: 'var(--color-navy)' }}>BlogPage</div>
+  return (
+    <>
+      <BlogHero />
+      <BlogPosts />
+    </>
+  );
 }
