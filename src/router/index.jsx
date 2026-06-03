@@ -6,6 +6,7 @@ import Layout from '@components/layout/Layout'
 const HomePage           = lazy(() => import('@pages/HomePage'))
 const AboutPage          = lazy(() => import('@pages/AboutPage'))
 const ServicesPage       = lazy(() => import('@pages/ServicesPage'))
+const ServiceDetailPage  = lazy(() => import('@pages/ServiceDetailPage'))
 const ProjectsPage       = lazy(() => import('@pages/ProjectsPage'))
 const ProjectDetailPage  = lazy(() => import('@pages/ProjectDetailPage'))
 const TestimonialsPage   = lazy(() => import('@pages/TestimonialsPage'))
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
     children: [
       { path: 'about',          element: <Wrap Component={AboutPage} /> },
       { path: 'services',       element: <Wrap Component={ServicesPage} /> },
+      { path: 'services/:slug', element: <Wrap Component={ServiceDetailPage} /> },
       { path: 'projects',       element: <Wrap Component={ProjectsPage} /> },
       { path: 'projects/:slug', element: <Wrap Component={ProjectDetailPage} /> },
       { path: 'testimonials',   element: <Wrap Component={TestimonialsPage} /> },
