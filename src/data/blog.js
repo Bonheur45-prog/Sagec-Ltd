@@ -18,7 +18,7 @@ const blog = [
     readTime: "6 min read",
     excerpt:
       "How SAGEC approached the architectural and structural challenges of delivering Kigali's most ambitious retail development — from concept sketch to opening day.",
-    coverImage: "",
+    coverImage: "https://images.squarespace-cdn.com/content/v1/687a4ad3366a2678166725fa/27279f5e-8b1a-4739-adf4-e35b4dd79037/DSC07363.jpg?format=2500w",
     content: `
       <p>The Silverback Mall project stands as one of SAGEC's most complex and rewarding commissions. From the earliest concept meetings with the client through to the final handover, the project demanded innovation at every stage.</p>
       <p>Our architectural team began with a deep study of Kigali's commercial landscape — understanding not just what the city needed today, but what it would need a decade from now. The result is a structure designed for adaptability as much as for immediate function.</p>
