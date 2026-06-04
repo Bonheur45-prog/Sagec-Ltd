@@ -1,3 +1,17 @@
+import ProjectsHero    from '@sections/projects/ProjectsHero'
+import ProjectsStats   from '@sections/projects/ProjectsStats'
+import FeaturedProject from '@sections/projects/FeaturedProject'
+import ProjectsGrid    from '@sections/projects/ProjectsGrid'
+import ProjectsCTA     from '@sections/projects/ProjectsCTA'
+
 export default function ProjectsPage() {
-  return <div style={{ padding: '120px 40px', fontFamily: 'var(--font-heading)', fontSize: '32px', color: 'var(--color-navy)' }}>ProjectsPage</div>
+  return (
+    <>
+      <ProjectsHero />
+      <ProjectsStats />
+      <FeaturedProject />
+      <ProjectsGrid />
+      <ProjectsCTA />
+    </>
+  )
 }
