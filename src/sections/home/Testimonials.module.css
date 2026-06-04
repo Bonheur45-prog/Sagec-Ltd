@@ -325,6 +325,10 @@
     padding: 72px 0 80px;
   }
 
+  .container {
+    padding: 0 16px;
+  }
+
   .header {
     flex-direction: column;
     align-items: flex-start;
@@ -338,5 +342,41 @@
 
   .grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 24px 20px 20px;
+  }
+
+  .quoteDecor {
+    font-size: 64px;
+    margin: -12px 0 -16px -2px;
+  }
+
+  .quoteText {
+    font-size: 13px;
+    margin: 0 0 16px;
+  }
+
+  .divider {
+    margin-bottom: 16px;
+  }
+
+  .client {
+    gap: 10px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .clientName {
+    font-size: 13px;
+  }
+
+  .clientRole {
+    font-size: 11px;
   }
 }
