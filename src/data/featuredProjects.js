@@ -13,9 +13,9 @@ const featuredProjects = [
     description:
       "A landmark retail and mixed-use complex redefining Kigali's commercial landscape with modern design and structural excellence.",
     images: [
-      "/assets/projects/silverback-mall-1.jpg",
-      "/assets/projects/silverback-mall-2.jpg",
-      "/assets/projects/silverback-mall-3.jpg",
+      "/images/projects/silverback-mall/featured.jpg",
+      "/images/projects/silverback-mall/gallery-1.jpg",
+      "/images/projects/silverback-mall/cover.webp",
     ],
     link: "/projects/silverback-mall",
     featured: true,
@@ -29,8 +29,8 @@ const featuredProjects = [
     description:
       "A premium residential development blending contemporary architecture with the natural contours of Kigali's hillside terrain.",
     images: [
-      "/assets/projects/florida-house-1.jpg",
-      "/assets/projects/florida-house-2.jpg",
+      "/images/projects/florida-house/cover.jpg",
+      "/images/projects/florida-house/featured.jpg",
     ],
     link: "/projects/florida-house",
     featured: false,
@@ -44,10 +44,10 @@ const featuredProjects = [
     description:
       "Full interior fit-out for one of Kigali's premier hotels, crafting refined spaces that balance elegance with functional hospitality.",
     images: [
-      "/assets/projects/lemigo-1.JPG",
-      "/assets/projects/lemigo-2.JPG",
-      "/assets/projects/lemigo-3.JPG",
-      "/assets/projects/lemigo-4.JPG",
+      "/images/projects/lemigo-hotel/featured.JPG",
+      "/images/projects/lemigo-hotel/gallery-2.JPG",
+      "/images/projects/lemigo-hotel/cover.JPG",
+      "/images/projects/lemigo-hotel/gallery-1.JPG",
     ],
     link: "/projects/lemigo-hotel",
     featured: false,
@@ -61,8 +61,8 @@ const featuredProjects = [
     description:
       "Institutional headquarters for the Rwanda Governance Board, delivering a civic presence that projects authority and transparency.",
     images: [
-      "/assets/projects/rgb-1.jpg",
-      "/assets/projects/rgb-2.jpg",
+      "/images/projects/rgb-building/cover.jpg",
+      "/images/projects/rgb-building/rgb-2.jpg",
     ],
     link: "/projects/rgb-building",
     featured: false,
