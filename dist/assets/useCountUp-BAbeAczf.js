@@ -1,0 +1,2 @@
+import{b as c}from"./vendor-DaxwrJ_W.js";function h(e,o=2e3,a=!1){const[m,r]=c.useState(0);return c.useEffect(()=>{if(!a||!e)return;let t=null,s;const f=n=>1-Math.pow(1-n,4),u=n=>{t||(t=n);const l=n-t,i=Math.min(l/o,1),p=f(i);r(Math.round(p*e)),i<1?s=requestAnimationFrame(u):r(e)};return s=requestAnimationFrame(u),()=>cancelAnimationFrame(s)},[a,e,o]),m}export{h as u};
+//# sourceMappingURL=useCountUp-BAbeAczf.js.map
