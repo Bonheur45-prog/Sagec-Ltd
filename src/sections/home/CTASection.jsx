@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useInView } from "@hooks/useInView";
-import styles from ".CTASection.module.css";
+import styles from "CTASection.module.css";
 
 // ─── Animation variant — card + all content fade up together ───
 const cardVariant = {
