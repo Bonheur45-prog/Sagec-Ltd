@@ -44,7 +44,7 @@ export const heroSlides = [
   {
     id: 4,
     type: 'image',
-    src: '/images/hero/lemigo-interior.jpg',
+    src: '/images/hero/lemigo-interior.jpeg',
     headline: 'Interior Design Excellence',
     subline: 'Transforming spaces into unforgettable experiences — where style meets function.',
     duration: 7000,
@@ -52,7 +52,7 @@ export const heroSlides = [
   {
     id: 5,
     type: 'image',
-    src: '/images/hero/rgb-building.jpg',
+    src: '/images/hero/rgb-building.jpeg',
     headline: 'Shaping Rwanda\'s Future',
     subline: 'Delivering innovative, sustainable construction solutions — building tomorrow, today.',
     duration: 7000,

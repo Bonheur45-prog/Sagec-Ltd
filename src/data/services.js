@@ -17,8 +17,8 @@ export const services = [
     title: 'Architectural Design',
     description:
       'Innovative, functional spaces that blend aesthetics with purpose — from initial concept through to detailed construction drawings ready for build.',
-    image:       '/images/services/architectural-design.JPG',
-    detailImage: '/images/services/architectural-design-detail.jpg',
+    image:       '/images/services/architectural-design.jpeg',
+    detailImage: '/images/services/architectural-design-detail.jpeg',
     iconKey: 'architecture',
     link: '/services/architectural-design',
     deliverables: [
@@ -35,8 +35,8 @@ export const services = [
     title: 'Structural Engineering',
     description:
       'Robust structural solutions engineered for safety, durability, and performance — every element calculated and verified to stand for generations.',
-    image:       '/images/services/structural-engineering.JPG',
-    detailImage: '/images/services/structural-engineering-detail.jpg',
+    image:       '/images/services/structural-engineering.jpeg',
+    detailImage: '/images/services/structural-engineering-detail.jpeg',
     iconKey: 'structure',
     link: '/services/structural-engineering',
     deliverables: [
@@ -53,8 +53,8 @@ export const services = [
     title: 'MEP Engineering',
     description:
       'Integrated mechanical, electrical, and plumbing systems designed for efficiency, sustainability, and long-term reliability across all building types.',
-    image:       '/images/services/mep-engineering.JPG',
-    detailImage: '/images/services/mep-engineering-detail.jpg',
+    image:       '/images/services/mep-engineering.jpeg',
+    detailImage: '/images/services/mep-engineering-detail.jpeg',
     iconKey: 'mep',
     link: '/services/mep-engineering',
     deliverables: [
@@ -71,8 +71,8 @@ export const services = [
     title: 'Project Management',
     description:
       'End-to-end project oversight — on time, within budget, and to the highest standards of quality and safety from groundbreaking to handover.',
-    image:       '/images/services/project-management.JPG',
-    detailImage: '/images/services/project-management-detail.jpg',
+    image:       '/images/services/project-management.jpeg',
+    detailImage: '/images/services/project-management-detail.jpeg',
     iconKey: 'management',
     link: '/services/project-management',
     deliverables: [
@@ -89,8 +89,8 @@ export const services = [
     title: 'Construction Management',
     description:
       'Expert on-site coordination of contractors, timelines, and resources to deliver exceptional construction outcomes at every scale.',
-    image:       '/images/services/construction-management.JPG',
-    detailImage: '/images/services/construction-management-detail.jpg',
+    image:       '/images/services/construction-management.jpeg',
+    detailImage: '/images/services/construction-management-detail.jpeg',
     iconKey: 'construction',
     link: '/services/construction-management',
     deliverables: [
@@ -107,8 +107,8 @@ export const services = [
     title: 'Interior Design',
     description:
       'Transforming interiors into experiences — curating spaces that reflect identity, comfort, and timeless elegance for residential, commercial, and hospitality projects.',
-    image:       '/images/services/interior-design.JPG',
-    detailImage: '/images/services/interior-design-detail.jpg',
+    image:       '/images/services/interior-design.jpeg',
+    detailImage: '/images/services/interior-design-detail.jpeg',
     iconKey: 'interior',
     link: '/services/interior-design',
     deliverables: [

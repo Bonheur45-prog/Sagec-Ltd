@@ -19,7 +19,7 @@ export default function ServicesHero() {
       {/* Background */}
       <div className={styles.background} aria-hidden="true">
         <img
-          src="/images/services/services-bg.jpg"
+          src="/images/services/services-bg.jpeg"
           alt=""
           className={styles.bgImage}
         />

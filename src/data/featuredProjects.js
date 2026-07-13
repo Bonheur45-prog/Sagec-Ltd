@@ -44,10 +44,10 @@ const featuredProjects = [
     description:
       "Full interior fit-out for one of Kigali's premier hotels, crafting refined spaces that balance elegance with functional hospitality.",
     images: [
-      "/images/projects/lemigo-hotel/featured.JPG",
-      "/images/projects/lemigo-hotel/gallery-2.JPG",
-      "/images/projects/lemigo-hotel/cover.JPG",
-      "/images/projects/lemigo-hotel/gallery-1.JPG",
+      "/images/projects/lemigo-hotel/featured.jpeg",
+      "/images/projects/lemigo-hotel/gallery-2.jpeg",
+      "/images/projects/lemigo-hotel/cover.jpeg",
+      "/images/projects/lemigo-hotel/gallery-1.jpeg",
     ],
     link: "/projects/lemigo-hotel",
     featured: false,

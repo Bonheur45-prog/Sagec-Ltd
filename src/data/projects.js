@@ -93,12 +93,12 @@ export const projects = [
       'A full interior design commission for one of Kigali\'s premier hotels — blending luxury, warmth, and African identity into every space.',
     description:
       'The Lemigo Hotel interior design project showcases SAGEC\'s depth in hospitality environments. Tasked with creating a refined, welcoming atmosphere that reflects both international luxury standards and Rwandan identity, SAGEC delivered a complete interior solution — from concept boards and space planning through to material specification and installation supervision.',
-    coverImage:    '/images/projects/lemigo-hotel/cover.JPG',
-    featuredImage: '/images/projects/lemigo-hotel/featured.JPG',
+    coverImage:    '/images/projects/lemigo-hotel/cover.jpeg',
+    featuredImage: '/images/projects/lemigo-hotel/featured.jpeg',
     gallery: [
-      '/images/projects/lemigo-hotel/gallery-1.JPG',
-      '/images/projects/lemigo-hotel/gallery-2.JPG',
-      '/images/projects/lemigo-hotel/gallery-3.JPG',
+      '/images/projects/lemigo-hotel/gallery-1.jpeg',
+      '/images/projects/lemigo-hotel/gallery-2.jpeg',
+      '/images/projects/lemigo-hotel/gallery-3.jpeg',
     ],
     services: ['Interior Design'],
     specs: {
