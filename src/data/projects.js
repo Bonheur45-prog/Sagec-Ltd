@@ -61,12 +61,13 @@ export const projects = [
       'A premium mixed-use development near City Tower — raising the standard for urban architecture and commercial space in central Kigali.',
     description:
       'Florida House is a testament to SAGEC\'s ability to deliver complex, multi-use developments in the heart of Kigali. Located near City Tower, the project combines commercial and office space within a sophisticated architectural envelope, demanding close coordination across all engineering disciplines.',
-    coverImage:    '/images/projects/florida-house/cover.jpg',
-    featuredImage: '/images/projects/florida-house/featured.jpg',
+    coverImage:    '/images/projects/florida-house/cover.jpeg',
+    featuredImage: '/images/projects/florida-house/featured.jpeg',
     gallery: [
-      '/images/projects/florida-house/gallery-1.jpg',
-      '/images/projects/florida-house/gallery-2.jpg',
-      '/images/projects/florida-house/gallery-3.jpg',
+      '/images/projects/florida-house/gallery-1.jpeg',
+      '/images/projects/florida-house/gallery-2.jpeg',
+      '/images/projects/florida-house/gallery-3.jpeg',
+      '/images/projects/florida-house/gallery-4.jpeg',
     ],
     services: ['Architectural Design', 'Structural Engineering', 'Project Management'],
     specs: {
@@ -112,11 +113,11 @@ export const projects = [
   },
   {
     id: 4,
-    slug: 'rgb-building',
-    title: 'RGB Building',
+    slug: 'tcb-house',
+    title: 'TCB House',
     category: 'Infrastructure',
     year: '20XX',
-    location: 'Remera, Kigali',
+    location: 'Kigali, Rwanda',
     client: 'Rwanda Governance Board',
     area: 'X,XXX sqm',
     status: 'In Progress',
@@ -124,16 +125,16 @@ export const projects = [
     shortDescription:
       'A prestigious government commission near Remera Stadium — delivering a landmark public building for the Rwanda Governance Board.',
     description:
-      'The RGB Building represents SAGEC\'s growing portfolio of government and institutional projects. Located near Remera Stadium, this commission for the Rwanda Governance Board demands the highest standards of structural engineering, MEP coordination, and construction management. The project is currently under construction and represents one of SAGEC\'s most significant public sector commissions to date.',
-    coverImage:    '/images/projects/rgb-building/cover.jpg',
-    featuredImage: '/images/projects/rgb-building/featured.jpg',
+      'The TCB House represents SAGEC\'s growing portfolio of government and institutional projects. Located near Remera Stadium, this commission for the Rwanda Governance Board demands the highest standards of structural engineering, MEP coordination, and construction management. The project is currently under construction and represents one of SAGEC\'s most significant public sector commissions to date.',
+    coverImage:    '/images/projects/tcb-house/cover.jpeg',
+    featuredImage: '/images/projects/tcb-house/featured.jpeg',
     gallery: [
-      '/images/projects/rgb-building/gallery-1.jpg',
-      '/images/projects/rgb-building/gallery-2.jpg',
+      '/images/projects/tcb-house/gallery-1.jpeg',
+      '/images/projects/tcb-house/gallery-2.jpeg',
     ],
     services: ['Structural Engineering', 'MEP Engineering', 'Construction Management', 'Project Management'],
     specs: {
-      Location: 'Remera, Kigali',
+      Location: 'Kigali, Rwanda',
       Year:     '20XX',
       Category: 'Infrastructure',
       Client:   'Rwanda Governance Board',
