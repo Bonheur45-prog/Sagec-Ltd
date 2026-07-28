@@ -60,7 +60,7 @@ export const heroSlides = [
 ]
 
 export const heroStats = [
-  { value: '10+', label: 'Years Experience' },
+  { value: '18+', label: 'Years Experience' },
   { value: '30+', label: 'Projects Completed' },
   { value: '50+', label: 'Happy Clients' },
   { value: 'Kigali', label: 'Rwanda' },

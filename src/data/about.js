@@ -72,7 +72,7 @@ export const coreValues = [
 export const milestones = [
   {
     id: 1,
-    year: '20XX',
+    year: '2008',
     badge: 'Founded',
     title: 'SAGEC Is Established',
     description:
@@ -80,7 +80,7 @@ export const milestones = [
   },
   {
     id: 2,
-    year: '20XX',
+    year: '2010',
     badge: 'First Major Project',
     title: 'First Landmark Commission',
     description:
@@ -88,7 +88,7 @@ export const milestones = [
   },
   {
     id: 3,
-    year: '20XX',
+    year: '2021–2022',
     badge: 'Milestone',
     title: 'Silverback Mall',
     description:
@@ -96,7 +96,7 @@ export const milestones = [
   },
   {
     id: 4,
-    year: '20XX',
+    year: '2012',
     badge: 'Milestone',
     title: 'Florida House',
     description:
@@ -104,7 +104,7 @@ export const milestones = [
   },
   {
     id: 5,
-    year: '20XX',
+    year: '2007',
     badge: 'Interior Design',
     title: 'Lemigo Hotel',
     description:
@@ -112,7 +112,7 @@ export const milestones = [
   },
   {
     id: 6,
-    year: '20XX',
+    year: '2026',
     badge: 'In Progress',
     title: 'RGB Building — Remera',
     description:
