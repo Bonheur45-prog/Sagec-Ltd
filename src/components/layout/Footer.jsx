@@ -9,7 +9,7 @@ const QUICK_LINKS = [
   { label: "Services",     to: "/services" },
   { label: "Projects",     to: "/projects" },
   { label: "Testimonials", to: "/testimonials" },
-  { label: "Careers",      to: "/careers" },
+  //{ label: "Careers",      to: "/careers" },
   { label: "News",         to: "/news" },
   { label: "Contact",      to: "/contact" },
 ];
@@ -27,7 +27,7 @@ const SERVICES = [
 const CONTACT = [
   { id: "address", content: "Kigali, Rwanda",                                           href: null },
   { id: "phone",   content: "+250 788 470 243",                                          href: "tel:+250788470243" },
-  { id: "email",   content: "sagecltd@gmail.com",                                             href: "mailto:sagecltd@gmail.com" },
+  { id: "email",   content: "info@sagecltd.com",                                             href: "mailto:info@sagecltd.com" },
   { id: "hours",   content: "Mon – Fri: 8:00 AM – 5:00 PM\nSat: 9:00 AM – 1:00 PM",    href: null },
 ];
 
@@ -63,7 +63,7 @@ const SOCIALS = [
   {
     id: "instagram",
     label: "SAGEC on Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/sagecltd?igsh=azVqYzJvcjF6cGpm",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -75,7 +75,7 @@ const SOCIALS = [
   {
     id: "linkedin",
     label: "SAGEC on LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/company/sagec-ltd/",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -87,7 +87,7 @@ const SOCIALS = [
   {
     id: "x",
     label: "SAGEC on X",
-    href: "https://x.com",
+    href: "https://x.com/sagecltd",
     icon: (
       // X (formerly Twitter) logo — two crossing lines
       <svg viewBox="0 0 24 24" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -228,7 +228,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              BONHEUR NSHIMIYIMANA
+              BRIGHTLINK TECHNOLOGIES LTD
             </a>
           </span>
         </div>

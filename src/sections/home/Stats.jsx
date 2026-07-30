@@ -7,7 +7,7 @@ import styles from './Stats.module.css'
 const stats = [
   {
     id: 1,
-    value: 10,
+    value: 18,
     suffix: '+',
     label: 'Years Experience',
     description: 'Over a decade of delivering architectural and engineering excellence across Rwanda.',
@@ -15,7 +15,7 @@ const stats = [
   },
   {
     id: 2,
-    value: 30,
+    value: 50,
     suffix: '+',
     label: 'Projects Completed',
     description: 'From landmark commercial buildings to premium interior design commissions.',
@@ -23,7 +23,7 @@ const stats = [
   },
   {
     id: 3,
-    value: 50,
+    value: 43,
     suffix: '+',
     label: 'Happy Clients',
     description: 'Trusted by government institutions, private developers, and businesses alike.',

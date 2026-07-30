@@ -88,14 +88,6 @@ export const milestones = [
   },
   {
     id: 3,
-    year: '2021–2022',
-    badge: 'Milestone',
-    title: 'Silverback Mall',
-    description:
-      'SAGEC delivers Silverback Mall — one of Kigali\'s most recognised commercial destinations and a landmark in the city\'s retail landscape.',
-  },
-  {
-    id: 4,
     year: '2012',
     badge: 'Milestone',
     title: 'Florida House',
@@ -103,20 +95,44 @@ export const milestones = [
       'Completion of Florida House near City Tower — a premium mixed-use development that raises the bar for Kigali\'s urban architecture.',
   },
   {
-    id: 5,
-    year: '2007',
+    id: 4,
+    year: '2016',
     badge: 'Interior Design',
     title: 'Lemigo Hotel',
     description:
       'SAGEC delivers the full interior design of Lemigo Hotel — a showcase of SAGEC\'s capability across luxury hospitality environments.',
   },
   {
-    id: 6,
-    year: '2026',
-    badge: 'In Progress',
-    title: 'RGB Building — Remera',
+    id: 5,
+    year: '2021–2022',
+    badge: 'Milestone',
+    title: 'Silverback Mall',
     description:
-      'SAGEC breaks ground on the new Rwanda Government Board building near Remera Stadium — one of the firm\'s most prestigious public commissions to date.',
+      'SAGEC delivers Silverback Mall — one of Kigali\'s most recognised commercial destinations and a landmark in the city\'s retail landscape.',
+  },
+  {
+    id: 6,
+    year: '2022',
+    badge: 'Completed',
+    title: 'TCB House',
+    description:
+      'SAGEC completes TCB House — a modern commercial & office building that exemplifies the firm\'s commitment to innovative design and sustainable construction practices.',
+  },
+  {
+    id: 7,
+    year: '2023',
+    badge: 'Completed',
+    title: 'G & D House',
+    description:
+      'SAGEC completes G & D House — a contemporary residential project that reflects the firm\'s dedication to quality, functionality, and aesthetic excellence.',
+  },
+  {
+    id: 8,
+    year: '2023',
+    badge: 'Completed',
+    title: 'Hall Mark Center',
+    description:
+      'SAGEC completes Hall Mark Center — a state-of-the-art commercial facility that showcases the firm\'s commitment to innovation and excellence in design.',
   },
 ]
 

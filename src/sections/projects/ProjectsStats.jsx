@@ -4,9 +4,9 @@ import { useCountUp } from '@hooks/useCountUp'
 import styles from './ProjectsStats.module.css'
 
 const stats = [
-  { value: 10,   suffix: '+', label: 'Years Experience' },
-  { value: 30,   suffix: '+', label: 'Projects Completed' },
-  { value: 50,   suffix: '+', label: 'Happy Clients' },
+  { value: 18,   suffix: '+', label: 'Years Experience' },
+  { value: 50,   suffix: '+', label: 'Projects Completed' },
+  { value: 43,   suffix: '+', label: 'Happy Clients' },
   { value: null, text: 'Kigali', suffix: '', label: 'Rwanda' },
 ]
 

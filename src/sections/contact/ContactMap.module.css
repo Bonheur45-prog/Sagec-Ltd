@@ -54,7 +54,7 @@
 .mapCard {
   position: absolute;
   top: var(--space-8);
-  left: var(--section-padding-x);
+  right: var(--section-padding-x);
   background-color: var(--color-bg-primary);
   border-radius: var(--radius-lg);
   padding: var(--space-6);

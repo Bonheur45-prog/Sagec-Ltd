@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: <EmailIcon />,
     label: 'Email',
-    value: 'sagecltd@gmail.com',
-    href: 'mailto:sagecltd@gmail.com',
+    value: 'info@sagecltd.com',
+    href: 'mailto:info@sagecltd.com',
   },
   {
     icon: <LocationIcon />,
@@ -210,7 +210,7 @@ export default function ContactMain() {
                   name="first_name"
                   type="text"
                   className={`${styles.input} ${errors.first_name ? styles.inputError : ''}`}
-                  placeholder="John"
+                  placeholder="Kayitare"
                   autoComplete="given-name"
                 />
                 {errors.first_name && <p className={styles.error}>{errors.first_name}</p>}
@@ -222,7 +222,7 @@ export default function ContactMain() {
                   name="last_name"
                   type="text"
                   className={`${styles.input} ${errors.last_name ? styles.inputError : ''}`}
-                  placeholder="Doe"
+                  placeholder="Brian"
                   autoComplete="family-name"
                 />
                 {errors.last_name && <p className={styles.error}>{errors.last_name}</p>}
@@ -237,7 +237,7 @@ export default function ContactMain() {
                 name="email"
                 type="email"
                 className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
-                placeholder="john@example.com"
+                placeholder="brian@sagecltd.com"
                 autoComplete="email"
               />
               {errors.email && <p className={styles.error}>{errors.email}</p>}

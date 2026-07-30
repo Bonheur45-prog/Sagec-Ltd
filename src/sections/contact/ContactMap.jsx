@@ -27,31 +27,9 @@ export default function ContactMap() {
       </motion.div>
 
       {/* Map embed */}
-      <div className={styles.mapWrapper}>
-        <iframe
-          className={styles.map}
-          title="SAGEC Ltd office location in Kigali, Rwanda"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.1908685827!2d29.92358695!3d-1.9440727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca4258ed8e797%3A0xf32b36a5411d0bc8!2sKigali%2C%20Rwanda!5e0!3m2!1sen!2srw!4v1699000000000!5m2!1sen!2srw"
-          loading="lazy"
-          allowFullScreen
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+<div className={styles.mapWrapper}> <iframe className={styles.map} title="SAGEC Ltd office location in Kigali, Rwanda" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2515.896572748356!2d30.059814408705233!3d-1.941665328674144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca500751220b9%3A0x5b13a1f15822166a!2sSAGEC%20LTD!5e1!3m2!1sen!2srw!4v1785436350409!5m2!1sen!2srw" loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade" /> {/* Overlay card on map */} 
 
-        {/* Overlay card on map */}
-        <div className={styles.mapCard}>
-          <p className={styles.mapCardTitle}>SAGEC Ltd</p>
-          <p className={styles.mapCardSub}>Architectural & Engineering Solutions</p>
-          <div className={styles.mapCardDivider} aria-hidden="true" />
-          <a
-            href="https://maps.google.com/?q=Kigali,Rwanda"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.mapCardLink}
-          >
-            Get Directions →
-          </a>
-        </div>
-      </div>
+<div className={styles.mapCard}> <p className={styles.mapCardTitle}>SAGEC Ltd</p> <p className={styles.mapCardSub}>Architectural & Engineering Solutions</p> <div className={styles.mapCardDivider} aria-hidden="true" /> <a href="https://maps.google.com/?q=Crystal Plaza, plot No 4kn, Justice AV, Kigali, Rwanda" target="_blank" rel="noopener noreferrer" className={styles.mapCardLink} > Get Directions → </a> </div> </div>
 
     </section>
   )

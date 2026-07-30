@@ -106,9 +106,9 @@ export default function OurStory() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             {[
-              { value: '10+', label: 'Years Experience' },
-              { value: '30+', label: 'Projects' },
-              { value: '50+', label: 'Happy Clients' },
+              { value: '18+', label: 'Years Experience' },
+              { value: '50+', label: 'Projects' },
+              { value: '43+', label: 'Happy Clients' },
             ].map((stat, i) => (
               <div key={i} className={styles.statItem}>
                 <span className={styles.statValue}>{stat.value}</span>
