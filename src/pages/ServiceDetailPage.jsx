@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { services } from '@data/services'
+import SEO from '@components/SEO'
 import styles from './ServiceDetailPage.module.css'
 
 // ── CHECK ICON ─────────────────────────────────────────────
@@ -41,6 +42,12 @@ export default function ServiceDetailPage() {
 
   return (
     <div className={styles.page}>
+      <SEO
+        title={service.title}
+        description={service.description}
+        path={`/services/${service.slug}`}
+        image={service.detailImage || service.image}
+      />
 
       {/* ── HERO ──────────────────────────── */}
       <section className={styles.hero}>

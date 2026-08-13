@@ -1,6 +1,7 @@
 // src/pages/BlogPostPage.jsx
 import { useParams, Navigate, Link } from "react-router-dom";
 import blog from "@data/blog";
+import SEO from "@components/SEO";
 
 export default function BlogPostPage() {
   const { slug } = useParams();
@@ -11,6 +12,12 @@ export default function BlogPostPage() {
 
   return (
     <article style={{ maxWidth: 800, margin: "0 auto", padding: "80px 24px" }}>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        path={`/blog/${post.slug}`}
+        image={post.coverImage}
+      />
       {/* Back link */}
       <Link
         to="/blog"

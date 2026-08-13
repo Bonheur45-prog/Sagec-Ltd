@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { projects } from '@data/projects'
+import SEO from '@components/SEO'
 import styles from './ProjectDetailPage.module.css'
 
 // ── GALLERY SLIDER ─────────────────────────────────────────
@@ -71,6 +72,12 @@ export default function ProjectDetailPage() {
 
   return (
     <div className={styles.page}>
+      <SEO
+        title={project.title}
+        description={project.shortDescription}
+        path={`/projects/${project.slug}`}
+        image={project.featuredImage || project.coverImage}
+      />
 
       {/* ── HERO ──────────────────────────── */}
       <section className={styles.hero}>
